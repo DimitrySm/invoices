@@ -1,32 +1,47 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+    <InvoicesCalcPage />
   </div>
 </template>
 
+<script lang="ts">
+import Vue from "vue";
+import InvoicesCalcPage from "@/views/InvoicesCalcPage.vue";
+
+export default Vue.extend({
+  components: {
+    InvoicesCalcPage,
+  },
+});
+</script>
+
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Caveat", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-nav {
-  padding: 30px;
+.container {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.title {
+  font-size: 40px;
+  align-self: flex-start;
+  margin: 50px 0 0 25px;
 }
 </style>
